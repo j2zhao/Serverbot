@@ -4,7 +4,16 @@ def respond(message):
     stemmer = nltk.stem.porter.PorterStemmer()
     tokens = [stemmer.stem(token) for token in nltk.word_tokenize(message)]
     
-    if 'price' in tokens:
-        return 'You are paying $xxx per month'
+    if tokens_in_list(['price', 'cost', 'pay'], tokens):
+        return 'You are paying ${} per month'.format(40)
+    elif 'test' in tokens:
+        return 'test'
     else:
-        return tokens[0]
+        return "I couldn't understand you, sorry."
+
+def tokens_in_list(search_tokens, tokens):
+    for t in search_tokens:
+        if t in tokens:
+            return True
+    else:
+        return False
