@@ -7,8 +7,22 @@ def respond(message):
     if tokens_in_list(['load'], tokens):
         if 'balenc' in tokens:
             return 'ans1'
-        elif 'firewal':
+        elif 'firewal' in tokens:
             return 'ans2'
+        elif 'hardware' in tokens:
+            return 'ans3'
+        elif 'SSD' in tokens:
+            return 'ans4'
+        elif 'image' in tokens:
+            return 'ans5'
+        elif 'ip' in tokens:
+            return 'ans6'
+        elif ['private', 'network'] in tokens:
+            return 'ans7'
+        elif 'all' in tokens:
+            return 'ans8'
+        else:
+            return 'all info'
 
 #=== example response code
     if tokens_in_list(['price', 'cost', 'pay'], tokens):
