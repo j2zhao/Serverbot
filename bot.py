@@ -23,14 +23,12 @@ def respond(message):
             return 'ans8'
         else:
             return 'all info'
-
-#=== example response code
-#    if tokens_in_list(['price', 'cost', 'pay'], tokens):
-#        return 'You are paying ${} per month'.format(40)
-#    elif 'test' in tokens:
-#        return 'test'
-#    else:
-#        return "I couldn't understand you, sorry."
+    elif tokens_in_list(['price', 'cost', 'pay'], tokens):
+        return 'You are paying ${} per month'.format(40)
+    elif 'test' in tokens:
+        return 'test'
+    else:
+        return "I couldn't understand you, sorry."
 
 def tokens_in_list(search_tokens, tokens):
     for t in search_tokens:
