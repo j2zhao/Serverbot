@@ -2,6 +2,8 @@ from flask import Flask, request
 import json
 import requests
 
+from bot import Bot
+
 app = Flask(__name__)
 
 # This needs to be filled with the Page Access Token that will be provided
@@ -27,7 +29,7 @@ def handle_messages():
     print(payload)
     for sender, message in messaging_events(payload):
         print('Incoming from {}: {}'.format(sender, message))
-        send_message(PAT, sender, message)
+        send_message(PAT, sender, serverbot.respond(message))
     return 'ok'
 
 
@@ -58,4 +60,5 @@ def send_message(token, recipient, text):
         print(r.text)
 
 if __name__ == '__main__':
+    serverbot = Bot()
     app.run()
