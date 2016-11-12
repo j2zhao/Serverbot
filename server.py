@@ -1,6 +1,7 @@
 from flask import Flask, request
 import json
 import requests
+import nltk
 
 import bot
 
@@ -41,7 +42,7 @@ def messaging_events(payload):
     messaging_events = data['entry'][0]['messaging']
     for event in messaging_events:
         if 'message' in event and 'text' in event['message']:
-            yield event['sender']['id'], event['message']['text'].encode('unicode_escape')
+            yield event['sender']['id'], event['message']['text'].encode()
         else:
             yield event['sender']['id'], 'I can\'t echo this'
 
@@ -60,4 +61,5 @@ def send_message(token, recipient, text):
         print(r.text)
 
 if __name__ == '__main__':
+    nltk.data.path.append('./nltk_data/')
     app.run()
