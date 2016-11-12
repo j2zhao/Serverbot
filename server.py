@@ -1,6 +1,7 @@
 from flask import Flask, request
 import json
 import requests
+import nltk
 
 import bot
 
@@ -60,4 +61,5 @@ def send_message(token, recipient, text):
         print(r.text)
 
 if __name__ == '__main__':
+    nltk.data.path.append('./nltk_data/')
     app.run()
