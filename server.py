@@ -2,7 +2,7 @@ from flask import Flask, request
 import json
 import requests
 
-from bot import Bot
+import bot
 
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def handle_messages():
     print(payload)
     for sender, message in messaging_events(payload):
         print('Incoming from {}: {}'.format(sender, message))
-        send_message(PAT, sender, serverbot.respond(message))
+        send_message(PAT, sender, bot.respond(message))
     return 'ok'
 
 
@@ -60,5 +60,4 @@ def send_message(token, recipient, text):
         print(r.text)
 
 if __name__ == '__main__':
-    serverbot = Bot()
     app.run()
