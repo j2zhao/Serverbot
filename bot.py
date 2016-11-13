@@ -4,7 +4,7 @@ import oneclient
 def respond(message):
     stemmer = nltk.stem.porter.PorterStemmer()
     tokens = [stemmer.stem(token).lower() for token in nltk.word_tokenize(message)]
-
+    
     if tokens_in_list(['hi', 'hello', 'hey', 'sup', 'whatsup', 'howdy', 'yo', 'help'], tokens):
         return "Hello! How can I be of assistance to you?"
     elif tokens_in_list(['ok', 'thanks', 'cool', 'thank'], tokens):
@@ -13,9 +13,9 @@ def respond(message):
         if 'name' in tokens:
             return 'The server names are: ' + ', '.join(oneclient.getServerNames())
         elif 'id' in tokens:
-            return 'ans2'
+            return 'The server IDs are: ' + ', '.join(oneclient.getServerIds())
         elif 'status' in tokens:
-            return 'ans3'
+            return 'The server status is: '
         elif 'HDD' in tokens:
             return 'ans4'
         else:
