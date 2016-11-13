@@ -11,12 +11,15 @@ def respond(message):
         return "You're welcome, my dear. Anything else I can help you with?"
     elif tokens_in_list(['server'], tokens):
         if 'name' in tokens:
+            print 'hi'
             return 'The server names are: ' + ', '.join(oneclient.getServerNames())
         elif 'id' in tokens: # or 'ids' in tokens:
+            print 'yo'
             return 'The server IDs are: ' + ', '.join(oneclient.getServerIDs())
         elif 'status' in tokens:
             #last = message.rsplit(' ', 1)[-1]
             #return 'The server status is: ' + ', '.join(oneclient.getServerStatus(last))
+            print 'jim'
             return 'jim'
         elif 'HDD' in tokens:
             return 'ans4'
