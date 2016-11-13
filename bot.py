@@ -1,22 +1,17 @@
 import nltk
-import 1a1client.py
+import oneclient
 
 def respond(message):
     stemmer = nltk.stem.porter.PorterStemmer()
     tokens = [stemmer.stem(token).lower() for token in nltk.word_tokenize(message)]
 
     if tokens_in_list(['hi', 'hello', 'hey', 'sup', 'whatsup', 'howdy', 'yo', 'help'], tokens):
-        return "Hello! how can I be of assistance to you?"
-
-    if tokens_in_list(['ok','thanks', 'cool', 'thank'], tokens):
-        return "You're welcome, my dear"
-
-    if tokens_in_list(['ok','thanks', 'cool'], tokens):
-        return "Anything else I can help you with?"
-
-    if tokens_in_list(['server'], tokens):
+        return "Hello! How can I be of assistance to you?"
+    elif tokens_in_list(['ok', 'thanks', 'cool', 'thank'], tokens):
+        return "You're welcome, my dear. Anything else I can help you with?"
+    elif tokens_in_list(['server'], tokens):
         if 'name' in tokens:
-            return 'The server name is ' + getServerNames()
+            return 'The server names are: ' + ', '.join(oneclient.getServerNames())
         elif 'id' in tokens:
             return 'ans2'
         elif 'status' in tokens:
