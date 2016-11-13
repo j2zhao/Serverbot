@@ -4,6 +4,9 @@ def respond(message):
     stemmer = nltk.stem.porter.PorterStemmer()
     tokens = [stemmer.stem(token).lower() for token in nltk.word_tokenize(message)]
 
+    if tokens_in_list(['hi', 'hello', 'hey', 'sup', 'whatsup', 'howdy', 'yo', 'hello Chatterbox', 'help', 'can you help me?'], tokens);
+    return 'Hello! how can I be of assistance to you?'
+
     if tokens_in_list(['load'], tokens):
         if 'balanc' in tokens:
             return 'ans1'
@@ -28,7 +31,7 @@ def respond(message):
     elif 'test' in tokens:
         return 'test'
     else:
-        return "I couldn't understand you, sorry."
+        return "I couldn't understand you, sorry. "
 
 def tokens_in_list(search_tokens, tokens):
     for t in search_tokens:
