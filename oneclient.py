@@ -17,7 +17,7 @@ def getServerIDs():
     r = requests.get(this_url, headers = headers)
     servers  = r.json()
     server_names = [server['name'] for server in servers]
-    server_ids = [server['name'] for server in servers]
+    server_ids = [server['id'] for server in servers]
     server_dic = {}
     for i in range(len(server_names)):
         server_dic[server_names[i]] = server_ids[i]
