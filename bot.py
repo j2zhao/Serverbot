@@ -15,8 +15,9 @@ def respond(message):
         elif 'id' in tokens or 'ids' in tokens:
             return 'The server IDs are: ' + ', '.join(oneclient.getServerIDs())
         elif 'status' in tokens:
-            last = message.rsplit(' ', 1)[-1]
-            return 'The server status is: ' + ', '.join(oneclient.getServerStatus(last))
+            #last = message.rsplit(' ', 1)[-1]
+            #return 'The server status is: ' + ', '.join(oneclient.getServerStatus(last))
+            return 'jim'
         elif 'HDD' in tokens:
             return 'ans4'
         else:
