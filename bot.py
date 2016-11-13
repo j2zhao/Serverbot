@@ -5,7 +5,7 @@ def respond(message):
     tokens = [stemmer.stem(token).lower() for token in nltk.word_tokenize(message)]
 
     if tokens_in_list(['load'], tokens):
-        if 'balenc' in tokens:
+        if 'balanc' in tokens:
             return 'ans1'
         elif 'firewal' in tokens:
             return 'ans2'
