@@ -5,7 +5,7 @@ def respond(message):
     tokens = [stemmer.stem(token).lower() for token in nltk.word_tokenize(message)]
 
     if tokens_in_list(['hi', 'hello', 'hey', 'sup', 'whatsup', 'howdy', 'yo', 'hello Chatterbox', 'help', 'can you help me?'], tokens):
-        return 'Hello! how can I be of assistance to you?'
+        return "Hello! how can I be of assistance to you?"
 
     if tokens_in_list(['ok','thanks', 'thanks!', 'Thank you', 'Thank you!', 'thank you!', 'cool'], tokens):
         return "Anything else I can help you with?"
