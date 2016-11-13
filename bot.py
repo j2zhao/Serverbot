@@ -8,7 +8,7 @@ def respond(message):
         return "Hello! how can I be of assistance to you?"
 
     if tokens_in_list(['ok','thanks', 'cool', 'thank'], tokens):
-        return "Anything else I can help you with?"
+        return "You're welcome, my dear"
 
     if tokens_in_list(['load'], tokens):
         if 'balanc' in tokens:
