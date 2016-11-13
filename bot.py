@@ -12,7 +12,7 @@ def respond(message):
     elif tokens_in_list(['server'], tokens):
         if 'name' in tokens:
             return 'The server names are: ' + ', '.join(oneclient.getServerNames())
-        elif 'id' in tokens or 'ids' in tokens:
+        elif 'id' in tokens: # or 'ids' in tokens:
             return 'The server IDs are: ' + ', '.join(oneclient.getServerIDs())
         elif 'status' in tokens:
             #last = message.rsplit(' ', 1)[-1]
