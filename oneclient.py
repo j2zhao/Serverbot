@@ -18,11 +18,10 @@ def getServerIDs():
     servers  = r.json()
     server_names = [server['name'] for server in servers]
     server_ids = [server['id'] for server in servers]
-    print(server_ids)
-    server_dic = {}
-    for i in range(len(server_names)):
-        server_dic[server_names[i]] = server_ids[i]
-    return server_dic
+    #server_dic = {}
+    #for i in range(len(server_names)):
+    #server_dic[server_names[i]] = server_ids[i]
+    return server_ids
     
 #get status of a server
 def getServerStatus(id):
